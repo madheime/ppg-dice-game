@@ -62,3 +62,14 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.log
+.metadata/.lock
+*.gen
+.metadata/.mylyn/.taskListIndex/segments_1
+*.zip
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+*.prefs
+.metadata/.plugins/org.eclipse.jdt.launching/.install.xml
+*.xml
+.metadata/.plugins/org.eclipse.team.cvs.core/.running
+.metadata/version.ini
