@@ -1,5 +1,6 @@
 package model;
 
+
 /**
  * [MAY BECOME AN ABSTRACT CLASS LATER]
  * 
@@ -14,11 +15,12 @@ public class Face {
 	private Colors color;
 	/** The number on the face of the die.*/
 	private Numbers number;
+
 	/**
 	 * Constructs a face of a given color and number.
 	 * 
 	 * @param color The color of the face of the die.
-	 * @param number The number on the face of the die.
+	 * @param number The number displayed on the face of the die.
 	 */
 	public Face(Colors color, Numbers number) {
 		this.setColor(color);
