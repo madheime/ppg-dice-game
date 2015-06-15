@@ -4,16 +4,20 @@ import java.util.ArrayList;
 //import java.util.Collections;
 //import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Die {
 
 	private ArrayList<Face> faces = new ArrayList<Face> ();
 	private Face topFace;
-	private Colors color;
+	private Set<Colors> colors;
+	private String id;
 	
-	public Die(ArrayList<Face> faces, Colors color) {
+	public Die(ArrayList<Face> faces) {
 		this.faces.addAll(0, faces);
-		this.setColor(color);
+		for (Face face: faces) {
+			this.addColor(face.getColor());
+		}
 		this.topFace = faces.get(0);
 	}
 	
@@ -41,17 +45,17 @@ public class Die {
 	}
 	
 	/**
-	 * @return the color
+	 * @return the set of colors of faces of the die
 	 */
-	public Colors getColor() {
-		return color;
+	public Set<Colors> getColors() {
+		return colors;
 	}
 
 	/**
-	 * @param color the color of the die. Should only be used by the constructor.
+	 * @param color the color added to the die. Should only be used by the constructor.
 	 */
-	public void setColor(Colors color) {
-		this.color = color;
+	public void addColor(Colors color) {
+		colors.add(color);
 	}
 	
 }
