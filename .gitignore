@@ -15,6 +15,7 @@ hs_err_pid*
 # Eclipse stuff
 # ===================
 .metadata\*
+.classpath
 
 # =========================
 # Operating System Files

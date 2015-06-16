@@ -2,6 +2,8 @@ package view;
 
 import static view.Constants.FRAME_HEIGHT;
 import static view.Constants.FRAME_WIDTH;
+import static model.Constants.MAX_PLAYERS;
+import static model.Constants.MIN_PLAYERS;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -15,7 +17,6 @@ import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,6 +35,9 @@ public class FileInputFrame extends JFrame {
 	/** ComboBox for file names. */
 	@SuppressWarnings("rawtypes")
 	private JComboBox fileNamesComboBox = new JComboBox();
+	
+	/** ComboBox for number of players. */
+	private JComboBox playerNumberComboBox = new JComboBox();
 	
 //	/** CheckBox for displaying labels. */
 //	private JCheckBox displayLabelCheckBox = new JCheckBox("Display Labels");
@@ -82,6 +86,7 @@ public class FileInputFrame extends JFrame {
 		fileInputPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
 		createFileDropdownArea(gridBagConstraints);
+		createPlayerNumberArea(gridBagConstraints);
 		createButtons(gridBagConstraints);
 	}
 
@@ -115,6 +120,27 @@ public class FileInputFrame extends JFrame {
 		fileInputPanel.add(fileNamesComboBox, gridBagConstraints);
 	}
 
+	
+
+	@SuppressWarnings("unchecked")
+	private void createPlayerNumberArea(GridBagConstraints gridBagConstraints) {
+		gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+		gridBagConstraints.gridx = 0;
+		gridBagConstraints.gridy = 2;
+		fileInputPanel.add(new JLabel("Number of Players :"),
+				gridBagConstraints);
+
+		for (int index = MIN_PLAYERS; index <= MAX_PLAYERS; index++) {
+			playerNumberComboBox.addItem(index);
+			}
+
+		gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+		gridBagConstraints.gridx = 1;
+		gridBagConstraints.gridy = 2;
+		fileInputPanel.add(playerNumberComboBox, gridBagConstraints);
+	}
+	
+	
 //	/**
 //	 * Method to create the display label check box. If checked the labels for
 //	 * various synapses and neurons are displayed.
@@ -172,6 +198,12 @@ public class FileInputFrame extends JFrame {
 //		return displayLabelCheckBox.isSelected();
 //	}
 
+	
+	public Integer getPlayerNumberSelected() {
+		return (Integer) playerNumberComboBox.getSelectedItem();
+	}
+	
+	
 	/**
 	 * 
 	 * @return returns the selected file name from the drop down.
