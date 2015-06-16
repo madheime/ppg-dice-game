@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 //import java.util.Collections;
 //import java.util.List;
 import java.util.Random;
@@ -10,7 +11,7 @@ public class Die {
 
 	private ArrayList<Face> faces = new ArrayList<Face> ();
 	private Face topFace;
-	private Set<Colors> colors;
+	private Set<Colors> colors = new HashSet<Colors>();
 	private String id;
 	
 	public Die(ArrayList<Face> faces) {

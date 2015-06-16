@@ -34,9 +34,9 @@ public class DiceGame {
 		f3.add(new Face(Colors.RED,Numbers.SIX));
 		System.out.println(f3);
 		
-		Die die1 = new Die(f1,Colors.GREEN);
-		Die die2 = new Die(f2,Colors.BLUE);
-		Die die3 = new Die(f3,Colors.RED);
+		Die die1 = new Die(f1);
+		Die die2 = new Die(f2);
+		Die die3 = new Die(f3);
 		
 		System.out.println("These three should all be 1: ");
 		System.out.println("	Die 1 top: " + die1.getTopFace());
