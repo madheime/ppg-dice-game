@@ -14,12 +14,13 @@ public class Die {
 	private Set<Colors> colors = new HashSet<Colors>();
 	private String id;
 	
-	public Die(ArrayList<Face> faces) {
+	public Die(String id, ArrayList<Face> faces) {
 		this.faces.addAll(0, faces);
 		for (Face face: faces) {
 			this.addColor(face.getColor());
 		}
 		this.topFace = faces.get(0);
+		this.id = id;
 	}
 	
 	/**
@@ -27,6 +28,10 @@ public class Die {
 	 */
 	public ArrayList<Face> getFaces() {
 		return faces;
+	}
+	
+	public String getId() {
+		return id;
 	}
 	
 	/**
@@ -57,6 +62,10 @@ public class Die {
 	 */
 	public void addColor(Colors color) {
 		colors.add(color);
+	}
+	
+	public void addFace(Face face) {
+		faces.add(face);
 	}
 	
 }

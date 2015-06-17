@@ -13,4 +13,8 @@ public class DiceGame {
 		
 	}
 	
+	public HashMap<String,Die> getDice() {
+		return dice;
+	}
+	
 }

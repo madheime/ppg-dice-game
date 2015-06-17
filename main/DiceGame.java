@@ -1,7 +1,10 @@
-import model.*;
-
 import java.util.ArrayList;
 import java.lang.System;
+
+import model.Colors;
+import model.Die;
+import model.Face;
+import model.Numbers;
 
 public class DiceGame {
 
@@ -34,9 +37,9 @@ public class DiceGame {
 		f3.add(new Face(Colors.RED,Numbers.SIX));
 		System.out.println(f3);
 		
-		Die die1 = new Die(f1);
-		Die die2 = new Die(f2);
-		Die die3 = new Die(f3);
+		Die die1 = new Die("1",f1);
+		Die die2 = new Die("2",f2);
+		Die die3 = new Die("3",f3);
 		
 		System.out.println("These three should all be 1: ");
 		System.out.println("	Die 1 top: " + die1.getTopFace());
