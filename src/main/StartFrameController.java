@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.EventQueue;
+import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 
@@ -34,6 +35,12 @@ public class StartFrameController
 				
 				DiceFileReader dfr = new DiceFileReader("data/DiceData.xlsx",diceGame);
 				dfr.readDiceFaces();
+				
+				//for testing only
+				for (Map.Entry<String, model.Die> entry : diceGame.getDice().entrySet())
+				{
+				    System.out.println(entry.getKey() + "/" + entry.getValue());
+				}
 				
 				// create controller for initial view
 				DiceGameController DiceGameController = new DiceGameController(fileInputFrame, diceGame);
