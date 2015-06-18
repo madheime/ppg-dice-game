@@ -91,7 +91,7 @@ public class DiceFileReader {
 						curr_die_id = Double.toString(cell.getNumericCellValue());
 						break;
 					// face color
-					case 1: 
+					case 1:
 						face_color = Colors.valueOf(cell.getStringCellValue());
 						break;
 					// face value

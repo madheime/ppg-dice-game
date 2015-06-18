@@ -9,10 +9,10 @@ import model.DiceFileReader;
 import model.DiceGame;
 import controller.DiceGameController;
 
-public class NetworkSimulator
+public class StartFrameController
 {
 	
-	private static final org.apache.logging.log4j.Logger LOG =  LogManager.getLogger(NetworkSimulator.class);
+	private static final org.apache.logging.log4j.Logger LOG =  LogManager.getLogger(StartFrameController.class);
 	
 	
 	public static void main(String[] args)
@@ -34,7 +34,7 @@ public class NetworkSimulator
 				
 				DiceFileReader dfr = new DiceFileReader("data/DiceData.xlsx",diceGame);
 				dfr.readDiceFaces();
-
+				
 				// create controller for initial view
 				DiceGameController DiceGameController = new DiceGameController(fileInputFrame, diceGame);
 
