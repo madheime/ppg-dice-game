@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import main.NetworkSimulator;
+import main.StartFrameController;
 import model.DiceGame;
 import model.Die;
 import model.Face;
