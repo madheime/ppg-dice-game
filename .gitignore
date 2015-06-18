@@ -86,3 +86,4 @@ $RECYCLE.BIN/
 .metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache
 .metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
 src/data/~$DiceData.xlsx
+/bin/
