@@ -1,18 +1,16 @@
 package model;
 
-import java.awt.Color;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+//import java.util.Arrays;
+//import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+//import java.util.List;
+//import java.util.Map;
 
-import main.StartFrameController;
 import model.DiceGame;
 import model.Die;
 import model.Face;
@@ -90,7 +88,7 @@ public class DiceFileReader {
 					switch (cell.getColumnIndex()) {
 					// die id
 					case 0:
-						curr_die_id = cell.getStringCellValue();
+						curr_die_id = Double.toString(cell.getNumericCellValue());
 						break;
 					// face color
 					case 1:

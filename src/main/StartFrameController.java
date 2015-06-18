@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import org.apache.logging.log4j.LogManager;
 
 import view.FileInputFrame;
+import model.DiceFileReader;
 import model.DiceGame;
 import controller.DiceGameController;
 
@@ -30,7 +31,10 @@ public class StartFrameController
 
 				// create model
 				DiceGame diceGame = new DiceGame();
-
+				
+				DiceFileReader dfr = new DiceFileReader("data/DiceData.xlsx",diceGame);
+				dfr.readDiceFaces();
+				
 				// create controller for initial view
 				DiceGameController DiceGameController = new DiceGameController(fileInputFrame, diceGame);
 
