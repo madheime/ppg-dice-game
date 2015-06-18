@@ -47,6 +47,7 @@ public class DiceFileReader {
 	public DiceFileReader(String fileName, DiceGame diceGame) {
 		path = this.getClass().getClassLoader().getResource(fileName).getFile();
 		this.diceGame = diceGame;
+		this.readDiceFaces();
 	}
 
 	/**
@@ -55,7 +56,7 @@ public class DiceFileReader {
 	 * @param sheet
 	 *            Excel sheet that contains information of faces
 	 */
-	public void readDiceFaces() {
+	private void readDiceFaces() {
 
 		InputStream fis = null;
 		try {

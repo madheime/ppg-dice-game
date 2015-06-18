@@ -34,7 +34,6 @@ public class StartFrameController
 				DiceGame diceGame = new DiceGame();
 				
 				DiceFileReader dfr = new DiceFileReader("data/DiceData.xlsx",diceGame);
-				dfr.readDiceFaces();
 				
 				//for testing only
 				for (Map.Entry<String, model.Die> entry : diceGame.getDice().entrySet())
