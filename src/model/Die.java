@@ -6,6 +6,7 @@ import java.util.HashSet;
 //import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.Vector;
 
 public class Die {
 
@@ -68,4 +69,17 @@ public class Die {
 		faces.add(face);
 	}
 	
+	// TODO
+	/*
+	public String toString() {
+		Colors[] colores = values();
+		String[] colornames = new String[colors.size()];
+		
+		for (int i = 0; i < colornames.length; i++) {
+			colornames[i] = colors[i].name();
+		}
+		String faceColors = String.join("/", new Vector<Colors>(colors).toArray().collect().toString());
+		return faces.size() + "-side " + faceColors;
+	}
+	*/
 }

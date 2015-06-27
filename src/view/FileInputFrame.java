@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ import javax.swing.JPanel;
  * 
  */
 @SuppressWarnings("serial")
-public class FileInputFrame extends JFrame {
+public class FileInputFrame extends JFrame implements ActionListener{
 
 	/** ComboBox for file names. */
 	@SuppressWarnings("rawtypes")
@@ -88,6 +89,7 @@ public class FileInputFrame extends JFrame {
 		createFileDropdownArea(gridBagConstraints);
 		createPlayerNumberArea(gridBagConstraints);
 		createButtons(gridBagConstraints);
+		startButton.addActionListener(this);
 	}
 
 	/**
@@ -118,9 +120,7 @@ public class FileInputFrame extends JFrame {
 		gridBagConstraints.gridx = 1;
 		gridBagConstraints.gridy = 1;
 		fileInputPanel.add(fileNamesComboBox, gridBagConstraints);
-	}
-
-	
+	}	
 
 	@SuppressWarnings("unchecked")
 	private void createPlayerNumberArea(GridBagConstraints gridBagConstraints) {
@@ -139,24 +139,6 @@ public class FileInputFrame extends JFrame {
 		gridBagConstraints.gridy = 2;
 		fileInputPanel.add(playerNumberComboBox, gridBagConstraints);
 	}
-	
-	
-//	/**
-//	 * Method to create the display label check box. If checked the labels for
-//	 * various synapses and neurons are displayed.
-//	 * 
-//	 * @param gridBagConstraints
-//	 *            gridbag parameters to specify GridBag layout for the
-//	 *            components.
-//	 */
-//	private void createLabelSelectArea(GridBagConstraints gridBagConstraints) {
-//		gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-//		gridBagConstraints.gridx = 0;
-//		gridBagConstraints.gridy = 2;
-//		displayLabelCheckBox.setSelected(false);
-//		fileInputPanel.add(displayLabelCheckBox, gridBagConstraints);
-//
-//	}
 
 	/**
 	 * Method to create the Evolve and Simulate buttons in the frame.
@@ -188,16 +170,6 @@ public class FileInputFrame extends JFrame {
 
 		return fileNames.toArray(new String[fileNames.size()]);
 	}
-
-//	/**
-//	 * 
-//	 * @return returns true if display label checkbox is selected, false
-//	 *         otherwise
-//	 */
-//	public boolean isLabelSelected() {
-//		return displayLabelCheckBox.isSelected();
-//	}
-
 	
 	public Integer getPlayerNumberSelected() {
 		return (Integer) playerNumberComboBox.getSelectedItem();
@@ -226,5 +198,10 @@ public class FileInputFrame extends JFrame {
 	// Open a popup that contains the error message passed
 	public void displayErrorMessage(String errorMessage) {
 		JOptionPane.showMessageDialog(this, errorMessage);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
 	}
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 
+import view.DraftFrame;
 import view.FileInputFrame;
 import model.DiceFileReader;
 import model.DiceGame;
@@ -27,24 +28,18 @@ public class StartFrameController
 				LOG.info("Everything's goin' well so far.");
 
 				// create initial view
-				FileInputFrame fileInputFrame = new FileInputFrame();
-				
+				FileInputFrame fileInputFrame = new FileInputFrame();				
 
 				// create model
 				DiceGame diceGame = new DiceGame();
 				
 				DiceFileReader dfr = new DiceFileReader("data/DiceData.xlsx",diceGame);
 				
-				//for testing only
-				for (Map.Entry<String, model.Die> entry : diceGame.getDice().entrySet())
-				{
-				    System.out.println(entry.getKey() + "/" + entry.getValue());
-				}
-				
 				// create controller for initial view
 				DiceGameController DiceGameController = new DiceGameController(fileInputFrame, diceGame);
 
 				fileInputFrame.setVisible(true);
+
 			}
 		});
 	}

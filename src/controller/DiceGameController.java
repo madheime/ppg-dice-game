@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import view.DraftFrame;
 import view.FileInputFrame;
 import model.DiceGame;
 import model.Player;
@@ -11,6 +12,7 @@ public class DiceGameController {
 	
 	private DiceGame game;
 	private FileInputFrame frame;
+	private DraftFrame draftFrame;
 	
 	public DiceGameController(FileInputFrame frame, DiceGame game) {
 		this.game = game;
@@ -43,6 +45,8 @@ public class DiceGameController {
 			
 			
 			frame.dispose();
+			DraftFrame draftFrame = new DraftFrame();
+			draftFrame.setVisible(true);
 		}
 	}
 	
