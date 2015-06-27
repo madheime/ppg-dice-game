@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DiceGame {
@@ -19,6 +20,11 @@ public class DiceGame {
 
 	public void addPlayer(Player player){
 		this.players.put(player.getId(),player);
+	}
+	
+	
+	public HashMap<String, Player> getPlayers() {				
+		return this.players;
 	}
 	
 }
