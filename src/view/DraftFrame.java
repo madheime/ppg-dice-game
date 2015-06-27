@@ -23,6 +23,7 @@ import model.Colors;
 import model.Die;
 import model.Face;
 import model.Numbers;
+import model.Values;
 
 @SuppressWarnings("serial")
 public class DraftFrame extends JFrame {
@@ -81,8 +82,8 @@ public class DraftFrame extends JFrame {
 		tempFaceList2.add(new Face(Colors.BLUE,Numbers.THREE));
 		tempFaceList2.add(new Face(Colors.BLUE,Numbers.FOUR));
 		Vector<Die> tempDieList = new Vector<Die>();
-		tempDieList.add(new Die("1", tempFaceList1));
-		tempDieList.add(new Die("2", tempFaceList2));
+		tempDieList.add(new Die("1", tempFaceList1, Values.ZERO));
+		tempDieList.add(new Die("2", tempFaceList2, Values.ZERO));
 		JList diceHand = new JList(tempDieList);
 		draftPanel.add(diceHand, gridBagConstraints);
 		

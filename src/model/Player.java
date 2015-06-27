@@ -13,7 +13,14 @@ public class Player {
 
 	private String name;
 	private String id;
+	
+	//seating
+	private Player left;
+	private Player right;
+	
+	//play collections
 	private ArrayList<Die> stash = new ArrayList<Die>();
+
 
 	private static final org.apache.logging.log4j.Logger LOG = LogManager
 			.getLogger(Player.class);

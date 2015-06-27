@@ -35,11 +35,10 @@ public class DiceFileReader {
 	private DiceGame diceGame;
 
 	/**
-	 * builds a neural network by reading files
+	 * builds a DiceGame by reading files
 	 * 
 	 * @param fileName
-	 *            name of the excel workbook that has all information to build a
-	 *            network
+	 *            name of the excel workbook that has all information to build the dice game.
 	 * @param diceGame
 	 *            diceGame instance that gets built
 	 */
@@ -51,7 +50,7 @@ public class DiceFileReader {
 	}
 
 	/**
-	 * builds a map of gas id against gas object by reading excel sheet
+	 * builds a DiceList by reading an excel sheet
 	 * 
 	 * @param sheet
 	 *            Excel sheet that contains information of faces
@@ -81,6 +80,7 @@ public class DiceFileReader {
 				String curr_die_id = "0";
 				Colors face_color = Colors.RED;
 				Numbers face_value = Numbers.ONE;
+				Values die_value = Values.ZERO;
 
 				// Iterating over each cell in a particular row.
 				while (cellIterator.hasNext()) {
@@ -89,7 +89,7 @@ public class DiceFileReader {
 					switch (cell.getColumnIndex()) {
 					// die id
 					case 0:
-						curr_die_id = Double.toString(cell.getNumericCellValue());
+						curr_die_id = "D" + Double.toString(cell.getNumericCellValue());
 						break;
 					// face color
 					case 1:
@@ -98,6 +98,10 @@ public class DiceFileReader {
 					// face value
 					case 2:
 						face_value = Numbers.valueOf(cell.getStringCellValue());
+						break;
+					// die value
+					case 3:
+						die_value = Values.valueOf(cell.getStringCellValue());
 						break;
 					default:
 						LOG.error("Tried to read past the end of the row!");
@@ -109,7 +113,7 @@ public class DiceFileReader {
 				if (diceGame.getDice().get(curr_die_id) == null) {
 					ArrayList<Face> face_array = new ArrayList<Face>();
 					face_array.add(new Face(face_color, face_value));
-					diceGame.getDice().put(curr_die_id, new Die(curr_die_id, face_array));
+					diceGame.getDice().put(curr_die_id, new Die(curr_die_id, face_array, die_value));
 				} else {
 					diceGame.getDice().get(curr_die_id).addFace(
 							new Face(face_color, face_value));

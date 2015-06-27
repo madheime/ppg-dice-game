@@ -15,13 +15,17 @@ public class Die {
 	private Set<Colors> colors = new HashSet<Colors>();
 	private String id;
 	
-	public Die(String id, ArrayList<Face> faces) {
+	//may want to order collections by die value
+	private Integer value;
+	
+	public Die(String id, ArrayList<Face> faces, Values value) {
 		this.faces.addAll(0, faces);
 		for (Face face: faces) {
 			this.addColor(face.getColor());
 		}
 		this.topFace = faces.get(0);
 		this.id = id;
+		this.value = value.getNum();
 	}
 	
 	/**
@@ -68,6 +72,8 @@ public class Die {
 	public void addFace(Face face) {
 		faces.add(face);
 	}
+
+
 	
 	// TODO
 	/*
@@ -82,4 +88,14 @@ public class Die {
 		return faces.size() + "-side " + faceColors;
 	}
 	*/
+	
+	
+	public Integer getValue() {
+		return value;
+	}
+
+	public void setValue(Integer value) {
+		this.value = value;
+	}
+	
 }

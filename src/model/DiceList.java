@@ -11,7 +11,7 @@ public class DiceList {
 		return diceList;
 	}
 	
-	public void addDie (String id, ArrayList<Face> faces) {
-		diceList.put(id,new Die(id,faces));
+	public void addDie (String id, ArrayList<Face> faces, Values value) {
+		diceList.put(id,new Die(id,faces,value));
 	}
 }
