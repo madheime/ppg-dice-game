@@ -11,4 +11,8 @@ public enum Colors {
 		this.color = color;
 	}
 	
+	public Color getColor() {
+		return this.color;
+	}
+	
 }

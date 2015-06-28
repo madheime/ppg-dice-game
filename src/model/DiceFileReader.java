@@ -23,7 +23,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- * This class is used to read input files and build neural network based on
+ * This class is used to read input files and build the DiceList based on
  * input files.
  */
 public class DiceFileReader {
@@ -35,10 +35,10 @@ public class DiceFileReader {
 	private DiceGame diceGame;
 
 	/**
-	 * builds a DiceGame by reading files
+	 * builds a DiceList by reading files
 	 * 
 	 * @param fileName
-	 *            name of the excel workbook that has all information to build the dice game.
+	 *            name of the excel workbook that has all information to build the dice list.
 	 * @param diceGame
 	 *            diceGame instance that gets built
 	 */

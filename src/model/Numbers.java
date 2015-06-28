@@ -6,18 +6,26 @@ package model;
  *
  */
 public enum Numbers {
-	ONE(1), TWO(2), THREE(3), FOUR, FIVE, 
-	SIX, SEVEN, EIGHT, NINE, TEN, 
-	ELEVEN, TWELVE, THIRTEEN, FOURTEEN, FIFTEEN, 
-	SIXTEEN, SEVENTEEN, EIGHTEEN, NINETEEN, TWENTY(20);
+	ONE(1,"img/one.png"), TWO(2,"img/two.png"), THREE(3,"img/three.png"), 
+	FOUR(4,"img/four.png"), FIVE(5,"img/five.png"), SIX(6,"img/six.png");
 	
-	private int number;
+	private int num;
+	private String path;
 	
 	private Numbers(){
 		
 	}
 	
-	private Numbers(int number){
-		this.number = number;
+	private Numbers(int num, String path){
+		this.num = num;
+		this.path = path;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public String getPath() {
+		return path;
 	}
 }

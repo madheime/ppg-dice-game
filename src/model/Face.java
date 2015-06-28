@@ -15,6 +15,8 @@ public class Face {
 	private Colors color;
 	/** The number on the face of the die.*/
 	private Numbers number;
+	/** The symbol on the face of the die.*/
+	private Symbols symbol;
 
 	/**
 	 * Constructs a face of a given color and number.
@@ -60,6 +62,11 @@ public class Face {
 	 */
 	public String toString() {
 		return color + ": " + number;
+	}
+
+	public Symbols getSymbol() {
+		// TODO Auto-generated method stub
+		return symbol;
 	}
 	
 	
