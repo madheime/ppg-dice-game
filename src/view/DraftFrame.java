@@ -97,7 +97,7 @@ public class DraftFrame extends JFrame {
 		gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
 		Vector <Face> omg = new Vector<Face>();
 		omg.add(new Face(Colors.RED,Numbers.ONE));
-		omg.add(new Face(Colors.RED,Numbers.ONE));
+		omg.add(new Face(Colors.RED,Numbers.TWO));
 		JList dieFaces = new JList(omg);
 		draftPanel.add(dieFaces, gridBagConstraints);
 	}
