@@ -19,7 +19,8 @@ public class Player {
 	private Player right;
 	
 	//play collections
-	private ArrayList<Die> stash = new ArrayList<Die>();
+	private Collection stash = new Collection();
+	private Collection draftHand = new Collection();
 
 
 	private static final org.apache.logging.log4j.Logger LOG = LogManager
