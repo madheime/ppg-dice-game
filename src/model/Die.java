@@ -73,21 +73,20 @@ public class Die {
 		faces.add(face);
 	}
 
-
-	
-	// TODO
-	/*
+	/**
+	 * @return an identifying string of the form "6-sided blue/red"
+	 */
 	public String toString() {
-		Colors[] colores = values();
 		String[] colornames = new String[colors.size()];
 		
-		for (int i = 0; i < colornames.length; i++) {
-			colornames[i] = colors[i].name();
+		int i = 0;
+		for (Colors c: colors) {
+			colornames[i] = c.name();
+			i++;
 		}
-		String faceColors = String.join("/", new Vector<Colors>(colors).toArray().collect().toString());
-		return faces.size() + "-side " + faceColors;
+		String faceColors = String.join("/", colornames);
+		return faces.size() + "-sided " + faceColors;
 	}
-	*/
 	
 	
 	public Integer getValue() {
