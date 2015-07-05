@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 
+import command.CommandFactory;
 import command.CommandInvoker;
 import command.Commands;
 import main.StartFrameController;
@@ -19,7 +20,7 @@ import model.Player;
 public class DraftController {
 	
 	private DiceGame game;
-	private CommandInvoker invoker;
+	private CommandFactory generator;
 	private Commands passingDirection = Commands.PASS_LEFT;
 	
 	//for debugging
@@ -45,15 +46,20 @@ public class DraftController {
 		//while some player still has dice left in hand
 		
 		while(this.stillDrafting()) {
+			
 			for(Player player: game.getPlayers().values()) {
 				//let them choose a die
 				
+				
+				
+				
+				
 				//then they pass their hand or discard it
 				if (player.getDraftHand().size() == 1) {
-					player.receiveCommand(invoker.invoke(this.passingDirection));
+					generator.generate(this.passingDirection);
 				}
 				else {
-					player.receiveCommand(invoker.invoke(Commands.PASS_LEFT));
+					generator.generate(Commands.PASS_LEFT);
 				}
 			}
 		}
@@ -115,7 +121,7 @@ public class DraftController {
 	        Collection currentHand = pair.getValue();
 	        
 	        if (currentHand.size() == 1) {
-	        	pair.getKey().receiveCommand(invoker.invoke(Commands.DISCARD_HAND));
+	        	generator.generate(Commands.DISCARD_HAND, pair.getKey());
 	        }
 	        
 

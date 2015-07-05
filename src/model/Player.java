@@ -56,10 +56,6 @@ public class Player {
 					+ " but couldn't find it in the source list.");
 		}
 	}
-	
-	public void receiveCommand(Command command) {
-		command.execute();
-	}
 
 	public Collection getDraftHand() {
 		return draftHand;
