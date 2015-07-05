@@ -22,14 +22,22 @@ public class Collection {
 		this.valuePositions = new HashMap<Integer, Integer>(collection.getValuePositions());
 	}
 	
+	public Collection(ArrayList<Die> dice) {
+		this.dice = dice;
+		this.valuePositions = new HashMap<Integer, Integer>(this.getValuePositions());
+	}
 	
 
 	//TODO decide about maintaining die uniqueness
 	public void add(Die die) {
 		dice.add(this.valuePositions.get(die.getValue()), die);
 		this.incrementValuePositions(die.getValue());
-		
 	}
+	
+	public int size() {
+		return dice.size();
+	}
+	
 	
 	public void remove(Die die) {
 		dice.remove(die);

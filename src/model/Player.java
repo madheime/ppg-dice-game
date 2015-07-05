@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 
+import command.Command;
 import command.Commands;
-
 import controller.DraftController;
 
 public class Player {
@@ -57,26 +57,16 @@ public class Player {
 		}
 	}
 	
-	public void receiveCommand(Commands command) {
-		switch(command){
-		case CONVENE:
-			break;
-		case DISCARD_DIE:
-			break;
-		case DISCARD_HAND:
-			break;
-		case EXPLODE:
-			break;
-		case LOSE_GAME:
-			break;
-		case TAKE_DIE:
-			break;
-		case WIN_GAME:
-			break;
-		default:
-			break;
-		
-		}
+	public void receiveCommand(Command command) {
+		command.execute();
+	}
+
+	public Collection getDraftHand() {
+		return draftHand;
+	}
+
+	public void setDraftHand(Collection draftHand) {
+		this.draftHand = draftHand;
 	}
 
 }
