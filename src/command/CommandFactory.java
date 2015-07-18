@@ -41,15 +41,21 @@ public class CommandFactory {
 		Command command = new NullCommand(this.invoker);
 		
 		switch(commandType) {
+		case CHOOSE_DIE:
+			command = new ChooseDieCommand(this.invoker,player);
 		case DISCARD_DIE:
 			break;
 		case DISCARD_HAND:
+			command = new DiscardHandCommand(this.invoker, player);
 			break;
 		case PASS_LEFT:
+			command = new PassLeftCommand(this.invoker, player);
 			break;
 		case PASS_RIGHT:
+			command = new PassRightCommand(this.invoker, player);
 			break;
 		case TAKE_DIE:
+			command = new TakeDieCommand(this.invoker, player);
 			break;
 		default:
 			LOG.error("invoke reached default case");

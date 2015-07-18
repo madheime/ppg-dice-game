@@ -14,13 +14,13 @@ public class PassRightCommand extends Command {
 	
 	
 	@Override
-	public void execute() {
+	public void executeThis() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void undo() {
+	public void undoThis() {
 		// TODO Auto-generated method stub
 
 	}

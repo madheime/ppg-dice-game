@@ -2,16 +2,12 @@ package command;
 
 import model.Player;
 
-public class PassLeftCommand extends Command {
+public class TakeDieCommand extends Command {
+
 	
-	
-	private Player passer;
-	
-	public PassLeftCommand(CommandInvoker invoker, Player passer) {
-		super(invoker);	
-		this.passer = passer;
+	public TakeDieCommand(CommandInvoker invoker, Player player) {
+		super(invoker);
 	}
-	
 	
 	@Override
 	public void executeThis() {

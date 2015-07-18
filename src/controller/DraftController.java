@@ -49,17 +49,14 @@ public class DraftController {
 			
 			for(Player player: game.getPlayers().values()) {
 				//let them choose a die
-				
-				
-				
-				
+				generator.generate(Commands.CHOOSE_DIE,player);
 				
 				//then they pass their hand or discard it
 				if (player.getDraftHand().size() == 1) {
-					generator.generate(this.passingDirection);
+					generator.generate(Commands.DISCARD_HAND , player);
 				}
 				else {
-					generator.generate(Commands.PASS_LEFT);
+					generator.generate(this.passingDirection, player);
 				}
 			}
 		}
@@ -72,44 +69,6 @@ public class DraftController {
 			}
 		}
 		return false;
-	}
-	
-	private void passHands() {
-		
-		LOG.debug("Before passing hands: " + hands);
-		
-		Collection lastHand = new Collection();
-		Player currentPlayer = new Player(null, null);
-		Player firstPlayer = new Player(null, null);
-		boolean first = true;
-		Iterator<Map.Entry<Player, Collection>> it = hands.entrySet().iterator();
-	    while (it.hasNext()) {
-	    	
-	        Map.Entry<Player, Collection> pair = it.next();
-	        currentPlayer = pair.getKey();
-	        
-	        //pass a new version of the current hand (so that it doesn't get overwritten by reference)
-	        lastHand = new Collection(pair.getValue());
-	        
-	        
-	        //save the first player for later
-	        if (first) {
-	    		firstPlayer = currentPlayer;
-	    		first = false;
-	    	}
-	        else {
-	        	//if it's not the first player, make their hand the previous hand
-	        	// new should prevent accidentally changing by reference
-	        	hands.put(currentPlayer, new Collection(lastHand));
-	        }
-	        
-	        it.remove(); // avoids a ConcurrentModificationException
-	    }
-	    
-	    //after looping through the whole group, the first player is passed the last player's hand.
-	    hands.put(firstPlayer, new Collection(lastHand));    
-	    
-	    LOG.debug("After passing hands: " + hands);
 	}
 	
 	
